@@ -24,7 +24,7 @@ jobs:
         uses: docker/metadata-action@v5.7.0
         with:
           images: |
-            ghcr.io/nikitos/rke-nginx-ingress
+            ghcr.io/nikitos/rke-nginx-ingress-lua
           tags: |
             type=sha
             type=semver,pattern=v{{version}}

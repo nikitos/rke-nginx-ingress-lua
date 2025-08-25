@@ -1,6 +1,6 @@
 FROM rancher/nginx-ingress-controller:nginx-1.12.1-rancher1
 USER root
-RUN apk update
+RUN apk update && apk upgrade
 RUN apk add lua-resty-openidc
 RUN apk add luarocks5.1
 RUN apk add nginx-mod-http-image-filter

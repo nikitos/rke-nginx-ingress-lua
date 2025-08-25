@@ -1,4 +1,4 @@
-FROM rancher/nginx-ingress-controller:nginx-1.12.1-rancher1
+FROM nginx/nginx-ingress:latest-alpine
 USER root
 RUN apk update && apk upgrade
 RUN apk add lua-resty-openidc

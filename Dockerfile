@@ -6,6 +6,7 @@ RUN apk add luarocks5.1
 RUN apk add nginx-mod-http-image-filter
 RUN apk add nginx-mod-http-lua nginx-mod-http-lua-upstream
 RUN apk add nginx-mod-http-headers-more
+RUN apk add nginx-mod-stream
 RUN luarocks-5.1 install base64
 RUN cp /usr/sbin/nginx /usr/bin/nginx
 USER www-data

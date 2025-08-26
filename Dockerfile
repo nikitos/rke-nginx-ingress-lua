@@ -12,4 +12,12 @@ RUN mkdir -p /var/tmp/nginx/uwsgi
 RUN chown www-data:www-data /var/tmp/nginx/uwsgi
 RUN mkdir -p /var/tmp/nginx/scgi
 RUN chown www-data:www-data /var/tmp/nginx/scgi
+RUN apk add --no-cache libcap \
+  && setcap    cap_net_bind_service=+ep /nginx-ingress-controller \
+  && setcap -v cap_net_bind_service=+ep /nginx-ingress-controller \
+  && setcap    cap_net_bind_service=+ep /usr/bin/nginx \
+  && setcap -v cap_net_bind_service=+ep /usr/bin/nginx \
+  && setcap    cap_net_bind_service=+ep /usr/sbin/nginx \
+  && setcap -v cap_net_bind_service=+ep /usr/sbin/nginx \
+  && apk del libcap
 USER www-data

@@ -4,6 +4,7 @@ RUN apk update && apk upgrade
 RUN apk add openresty-mod-http-lua
 RUN apk add nginx-mod-http-headers-more
 RUN apk add nginx-mod-stream
+RUN apk add libgd
 RUN apk add luarocks5.1
 RUN luarocks-5.1 install base64
 RUN luarocks-5.1 install lua-resty-openidc
